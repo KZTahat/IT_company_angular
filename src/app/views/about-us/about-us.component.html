@@ -1,0 +1,55 @@
+<app-header />
+
+<div class="component-page">
+  <div class="content-header">
+    <app-title text="About Us" [level]="1" />
+  </div>
+  <div class="about-us">
+    <p>
+      Founded in January <strong>2010</strong>, our company has established
+      itself as a leading innovator in the IT industry. We specialize in
+      creating cutting-edge IT projects and providing top-tier IT services that
+      cater to a diverse range of industries. Our areas of expertise include
+      software development, cloud computing, and cybersecurity. With a team of
+      highly skilled professionals, we deliver customized solutions that drive
+      efficiency and growth for our clients. Over the years, we have built a
+      reputation for excellence, reliability, and a commitment to leveraging the
+      latest technology to meet our clients' needs. Our mission is to empower
+      businesses to overcome complex challenges and achieve their goals through
+      innovative and effective IT solutions.
+    </p>
+    <p>
+      Our comprehensive suite of services includes IT consulting, project
+      management, custom software development, and IT support. We work closely
+      with our clients to understand their unique needs and deliver tailored
+      solutions that ensure their success. Our team is dedicated to staying at
+      the forefront of technological advancements, continually expanding our
+      knowledge and expertise to provide the best possible service. With a
+      strong focus on customer satisfaction, we strive to build lasting
+      relationships with our clients, helping them navigate the ever-evolving
+      landscape of technology. Our commitment to excellence has earned us a
+      loyal client base and a reputation as a trusted partner in the IT
+      industry.
+    </p>
+
+    <div class="company-info">
+      <h2>Company Information</h2>
+      <ul>
+        <li><strong>Founding Date:</strong> January 15, 2010</li>
+        <li><strong>Number of Employees:</strong> 150</li>
+
+        <app-title text="Head Administration" [level]="2" />
+        <div class="admin-cards">
+          <div class="admin-card" *ngFor="let member of adminMembers">
+            <div class="admin-image"></div>
+            <h3>{{ member.name }}</h3>
+            <p><strong>Position:</strong> {{ member.position }}</p>
+            <p>{{ member.experience }}</p>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<app-footer />

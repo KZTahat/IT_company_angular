@@ -1,0 +1,38 @@
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--boundary_light_color);
+
+  .add-project-button {
+    display: inline-block;
+    height: 100%;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon_hover_color);
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--sideBar_color);
+    }
+  }
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1em;
+}

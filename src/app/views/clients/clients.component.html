@@ -1,0 +1,21 @@
+<app-header />
+
+<div class="component-page">
+  <div class="content-header">
+    <app-title text="Our Clients" [level]="1" />
+  </div>
+  <div class="clients">
+    <div class="client-cards">
+      <div class="client-card" *ngFor="let client of clients">
+        <div class="client-image"></div>
+        <section>
+          <h2>{{ client.name }}</h2>
+          <p><strong>Client Since:</strong> {{ client.since }}</p>
+          <p>{{ client.description }}</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer />

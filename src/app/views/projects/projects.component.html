@@ -1,0 +1,28 @@
+<app-header />
+
+<div class="component-page">
+  <div class="content-header">
+    <app-title text="Projects" [level]="1" />
+    <span (click)="toggleModel()" class="add-project-button">
+      <i class="ri-add-circle-fill"></i>
+    </span>
+  </div>
+  <div class="content-container">
+    <div class="projects-container">
+      <ng-container *ngFor="let project of projects">
+        <app-project-card
+          [title]="project.title"
+          [startDate]="project.startDate"
+          [managerName]="project.managerName"
+        />
+      </ng-container>
+    </div>
+  </div>
+  <ng-container *ngIf="showAddModel">
+    <app-data-model [toggle]="toggleModel">
+      <h1>Hello</h1>
+    </app-data-model>
+  </ng-container>
+</div>
+
+<app-footer />

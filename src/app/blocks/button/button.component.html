@@ -1,0 +1,11 @@
+<button
+class="button-component"
+  [disabled]="isLoading"
+  (click)="handler()"
+  [style]="{ backgroundColor: background_color, color: textColor }"
+>
+  <ng-container *ngIf="isLoading; else notLoading">Loading...</ng-container>
+  <ng-template #notLoading>
+    {{ text }}
+  </ng-template>
+</button>

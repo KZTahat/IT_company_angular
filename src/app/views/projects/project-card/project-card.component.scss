@@ -1,0 +1,32 @@
+.project-box {
+  background-color: var(--content_boxes_color);
+  height: 250px; /* change here */
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 1;
+
+  .card_header_background {
+    background-image: url("../../../../assets/images/project_default_avatar.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+  .card_right_part {
+    padding: 1.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--boundary_light_color);
+}
+
+.about-us {
+  background-color: var(--main_background_color);
+  color: var(--text_color);
+  padding: 2em;
+  border-radius: 8px;
+  width: 100%;
+  margin: 2em auto;
+
+  h1,
+  h2 {
+    color: var(--sidebar_color);
+  }
+
+  p {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  .company-info {
+    background-color: var(--content_boxes_color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+
+    ul ul {
+      margin-top: 10px;
+      padding-left: 2em;
+    }
+  }
+
+  .admin-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+
+    .admin-card {
+      background-color: var(--content_boxes_color);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+
+      .admin-image {
+        width: 100%;
+        height: 10em;
+        background-image: url("../../../assets/images/male_dummy_photo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-bottom: 0.5em;
+      }
+
+      h3 {
+        color: var(--icon_hover_color);
+        margin-top: 0;
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 1em;
+      }
+    }
+  }
+}

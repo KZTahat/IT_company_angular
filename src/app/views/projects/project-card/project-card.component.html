@@ -1,0 +1,29 @@
+<div class="project-box" key="id">
+  <header>
+    <div class="card_header_background"></div>
+
+    <img
+      src="../../../../assets/images/project_default_avatar.png"
+      alt="project image"
+    />
+  </header>
+
+  <div class="card_right_part">
+    <app-title [text]="title" [level]="3"></app-title>
+    <div class="project_details">
+      <span
+        >Project Manager: <strong>{{ managerName }}</strong></span
+      >
+      <span class="start-date-tag"
+        >Start Date: <strong>{{ startDate }}</strong>
+      </span>
+    </div>
+    <div>
+      <app-button
+        text="View Details"
+        [isLoading]="isLoading"
+        (click)="navigateToDetails(id)"
+      ></app-button>
+    </div>
+  </div>
+</div>
