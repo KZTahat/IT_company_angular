@@ -3,7 +3,7 @@
 <div class="component-page">
   <div class="content-header">
     <app-title text="Projects" [level]="1" />
-    <span (click)="toggleModel()" class="add-project-button">
+    <span (click)="showModel()" class="add-project-button">
       <i class="ri-add-circle-fill"></i>
     </span>
   </div>
@@ -11,6 +11,7 @@
     <div class="projects-container">
       <ng-container *ngFor="let project of projects">
         <app-project-card
+          [id]="project.id"
           [title]="project.title"
           [startDate]="project.startDate"
           [managerName]="project.managerName"
@@ -19,7 +20,7 @@
     </div>
   </div>
   <ng-container *ngIf="showAddModel">
-    <app-data-model [toggle]="toggleModel">
+    <app-data-model [hideModel]="hideModel">
       <h1>Hello</h1>
     </app-data-model>
   </ng-container>

@@ -10,13 +10,10 @@ import { Router } from '@angular/router';
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss',
 })
-
 export class ProjectCardComponent {
   constructor(private router: Router) {}
 
-  imagePath: string = '../../../../assets/images/male_dummy_photo.png';
-
-  @Input() id: string= '';
+  @Input() id: string = '';
   @Input() title: string = '';
   @Input() startDate: string = '';
   @Input() managerName: string = '';
@@ -26,10 +23,7 @@ export class ProjectCardComponent {
     this.isLoading = true;
   }
 
-  navigateToDetails(id: string): void {
-    console.log(id);
-    
+  navigateToDetails(): void {
     this.router.navigate(['/details', this.id]);
   }
 }
-

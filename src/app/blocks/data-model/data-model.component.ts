@@ -5,13 +5,16 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './data-model.component.html',
-  styleUrl: './data-model.component.scss'
+  styleUrl: './data-model.component.scss',
 })
 export class DataModelComponent {
-  @Input() toggle: () => void = () => {};
-  @Input() showModel: boolean = false;
+  @Input() hideModel: () => void = () => {};
 
   close(): void {
-    this.toggle();
+    if (this.hideModel) {
+      this.hideModel();
+    } else {
+      console.warn('hideModel is not defined');
+    }
   }
 }

@@ -1,1 +1,33 @@
-<p>details works!</p>
+<app-header />
+
+<div class="component-page">
+  <div class="content-header">
+    <app-title text="Project Details" [level]="1" />
+  </div>
+  <div class="details-container">
+    <div class="details-left">
+      <h2>{{ project.title }}</h2>
+      <p><strong>Start Date:</strong> {{ project.startDate }}</p>
+      <p><strong>End Date:</strong> {{ project.endDate }}</p>
+      <p><strong>Project Manager:</strong> {{ project.managerName }}</p>
+      <p><strong>Client:</strong> {{ project.clientName }}</p>
+      <p>{{ project.description }}</p>
+    </div>
+    <div class="details-right">
+      <h2>Team Members</h2>
+      <div class="team-member-card" *ngFor="let member of project.teamMembers">
+        <div class="member-image"></div>
+        <div>
+          <span
+            ><strong>{{ member.name }}</strong
+            >,
+          </span>
+          <span>{{ member.yearsOfExperience }} years xp</span>
+          <p>{{ member.department }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer />

@@ -1,17 +1,12 @@
-import { Component } from '@angular/core';
-import { ProjectCardComponent } from './project-card/project-card.component';
+import { Component, OnInit } from '@angular/core';
+import { ProjectService } from '../../services/projects.service';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from '../../blocks/title/title.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 import { HeaderComponent } from '../../blocks/header/header.component';
 import { DataModelComponent } from '../../blocks/data-model/data-model.component';
 import { FooterComponent } from '../../blocks/footer/footer.component';
-
-interface Project {
-  id: string;
-  title: string;
-  startDate: string;
-  managerName: string;
-}
+import { DataModelService } from '../../services/dataModel.service';
 
 @Component({
   selector: 'app-projects',
@@ -27,62 +22,25 @@ interface Project {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
+export class ProjectsComponent implements OnInit {
+  constructor(
+    private projectService: ProjectService,
+    private dataModelService: DataModelService
+  ) {}
 
-export class ProjectsComponent {
-  showAddModel: boolean = false;
-
-  toggleModel(): void {
-    this.showAddModel = !this.showAddModel;
+  // get projects from service
+  projects: any;
+  ngOnInit(): void {
+    this.projects = this.projectService.getProjects();
   }
 
-  projects: Project[] = [
-    {
-      id: '1',
-      title: 'Project Alpha',
-      startDate: '2024-01-15',
-      managerName: 'Alice Johnson',
-    },
-    {
-      id: '2',
-      title: 'Project Beta',
-      startDate: '2024-02-20',
-      managerName: 'Bob Smith',
-    },
-    {
-      id: '3',
-      title: 'Project Gamma',
-      startDate: '2024-03-10',
-      managerName: 'Charlie Brown',
-    },
-    {
-      id: '4',
-      title: 'Project Delta',
-      startDate: '2024-04-05',
-      managerName: 'Dana White',
-    },
-    {
-      id: '5',
-      title: 'Project Epsilon',
-      startDate: '2024-05-15',
-      managerName: 'Evan Lee',
-    },
-    {
-      id: '6',
-      title: 'Project Zeta',
-      startDate: '2024-06-20',
-      managerName: 'Fiona Green',
-    },
-    {
-      id: '7',
-      title: 'Project Eta',
-      startDate: '2024-07-25',
-      managerName: 'George Black',
-    },
-    {
-      id: '8',
-      title: 'Project Theta',
-      startDate: '2024-08-30',
-      managerName: 'Hannah Brown',
-    },
-  ];
+  get showAddModel(): boolean {
+    return this.dataModelService.modelStatus;
+  }
+  showModel = (): void => {
+    this.dataModelService.showModel();
+  };
+  hideModel = (): void => {
+    this.dataModelService.hideModel();
+  };
 }

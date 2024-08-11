@@ -1,0 +1,78 @@
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--main_background_color);
+  color: var(--text_color);
+  gap: 1em;
+}
+
+.details-left {
+  width: 60%;
+  padding: 20px;
+  background-color: var(--content_boxes_color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  h2 {
+    color: var(--side_bar_color);
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 1.1em;
+
+    strong {
+      color: var(--icon_hover_color);
+    }
+  }
+}
+
+.details-right {
+  width: 40%;
+  padding: 20px;
+  background-color: var(--content_boxes_color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5em;
+
+  h2 {
+    margin-bottom: 20px;
+    color: var(--icon_hover_color);
+  }
+
+  .team-member-card {
+    width: 100%;
+    height: 4em;
+    padding: 0.5em;
+    border-radius: 8px;
+    background-color: var(--main_background_color);
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+
+    .member-image {
+      width: 4em;
+      border-radius: 50%;
+      background-image: url("../../../assets/images/male_dummy_photo.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1em;
+
+      strong {
+        color: var(--text_color);
+      }
+    }
+  }
+}
