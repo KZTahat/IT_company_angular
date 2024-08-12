@@ -1,0 +1,41 @@
+<div class="add-project-form-content">
+  <app-title text="Create New Project" [level]="2" />
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Title:</label>
+      <input type="text" [(ngModel)]="projectData.title" name="title" />
+    </div>
+    <div>
+      <label>Start Date:</label>
+      <input type="date" [(ngModel)]="projectData.startDate" name="startDate" />
+    </div>
+    <div>
+      <label>End Date:</label>
+      <input type="date" [(ngModel)]="projectData.endDate" name="endDate" />
+    </div>
+    <div>
+      <label>Manager Name:</label>
+      <input
+        type="text"
+        [(ngModel)]="projectData.managerName"
+        name="managerName"
+      />
+    </div>
+    <div class="textarea">
+      <label>Description:</label>
+      <textarea
+        [(ngModel)]="projectData.description"
+        name="description"
+      ></textarea>
+    </div>
+    <div>
+      <label>Client Name:</label>
+      <input
+        type="text"
+        [(ngModel)]="projectData.clientName"
+        name="clientName"
+      />
+    </div>
+    <button type="submit">Add Project</button>
+  </form>
+</div>

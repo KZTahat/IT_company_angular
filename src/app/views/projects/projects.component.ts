@@ -7,6 +7,7 @@ import { HeaderComponent } from '../../blocks/header/header.component';
 import { DataModelComponent } from '../../blocks/data-model/data-model.component';
 import { FooterComponent } from '../../blocks/footer/footer.component';
 import { DataModelService } from '../../services/dataModel.service';
+import { AddProjectFormComponent } from './add-project-form/add-project-form.component';
 
 @Component({
   selector: 'app-projects',
@@ -18,6 +19,7 @@ import { DataModelService } from '../../services/dataModel.service';
     TitleComponent,
     DataModelComponent,
     FooterComponent,
+    AddProjectFormComponent,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -29,7 +31,7 @@ export class ProjectsComponent implements OnInit {
   ) {}
 
   // get projects from service
-  projects: any;
+  projects: any[] = [];
   ngOnInit(): void {
     this.projects = this.projectService.getProjects();
   }
@@ -43,4 +45,9 @@ export class ProjectsComponent implements OnInit {
   hideModel = (): void => {
     this.dataModelService.hideModel();
   };
+
+  handleFormSubmit(newProject: any): void {
+    this.projects.push(newProject);
+    this.hideModel();
+  }
 }

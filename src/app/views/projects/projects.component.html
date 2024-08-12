@@ -21,7 +21,9 @@
   </div>
   <ng-container *ngIf="showAddModel">
     <app-data-model [hideModel]="hideModel">
-      <h1>Hello</h1>
+      <app-add-project-form
+        (formSubmit)="handleFormSubmit($event)"
+      ></app-add-project-form>
     </app-data-model>
   </ng-container>
 </div>
